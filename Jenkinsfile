@@ -15,17 +15,12 @@ pipeline {
         }
       }
       when {
-        anyOf {
-          environment name: 'DEPLOY_STAGE', value: 'DEV'
-          environment name: 'DEPLOY_STAGE', value: 'RC'
-          environment name: 'DEPLOY_STAGE', value: 'UAT'
-        }
+        environment name: 'DEPLOY_STAGE', value: 'RELEASE'
       }
       environment {
         NEXUS_CREDENTIALS = credentials('docker_push')
       }
       steps {
-        unstash 'dist'
         sh 'echo -n "_auth=" > .npmrc'
         sh 'echo -n "$NEXUS_CREDENTIALS_USR:$NEXUS_CREDENTIALS_PSW" | openssl base64 >> .npmrc'
         sh 'yarn publish --non-interactive'
