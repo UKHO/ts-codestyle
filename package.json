@@ -1,0 +1,24 @@
+{
+  "name": "@ukho/ts-codestyle",
+  "version": "1.0.0",
+  "author": "UK Hydrographic Office",
+  "dependencies": {
+    "codelyzer": "~4.5.0",
+    "rxjs-tslint-rules": "^4.10.0",
+    "tslint": "~5.11.0",
+    "tslint-config-prettier": "^1.15.0",
+    "tslint-microsoft-contrib": "^5.2.1",
+    "tslint-no-unused-expression-chai": "^0.1.4",
+    "tslint-plugin-prettier": "^2.0.1",
+    "tslint-sonarts": "^1.8.0"
+  },
+  "devDependencies": {
+    "typescript": "~3.1.6"
+  },
+  "peerDependencies": {
+    "@angular/compiler": "~7.1.0",
+    "@angular/core": "~7.1.0",
+    "prettier": "^1.15.3",
+    "rxjs": "~6.3.3"
+  }
+}
