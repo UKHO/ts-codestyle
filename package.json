@@ -20,5 +20,8 @@
     "@angular/core": "~7.1.0",
     "prettier": "^1.15.3",
     "rxjs": "~6.3.3"
+  },
+  "publishConfig": {
+    "registry": "https://nexus-infra.mint.ukho.gov.uk:8443/repository/mint-npm-hosted"
   }
 }
