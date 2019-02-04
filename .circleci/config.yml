@@ -1,0 +1,32 @@
+version: 2
+jobs:
+  deps:
+    docker:
+      - image: circleci/node:10.15.0-stretch
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run: yarn
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+  publish:
+    docker:
+      - image: circleci/node:10.15.0-stretch
+    steps:
+      - checkout
+      - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+      - run: npm publish --access=public
+workflows:
+  version: 2
+  default_workflow:
+    jobs:
+      - deps
+      - publish:
+          requires:
+            - deps
+          filters:
+            branches:
+              only: master
