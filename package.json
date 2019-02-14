@@ -1,6 +1,6 @@
 {
   "name": "@ukho/ts-codestyle",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "UK Hydrographic Office",
   "main": "tslint.json",
   "dependencies": {
