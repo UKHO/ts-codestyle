@@ -6,7 +6,7 @@
   "dependencies": {
     "codelyzer": "~4.5.0",
     "rxjs-tslint-rules": "^4.10.0",
-    "tslint": "~5.11.0",
+    "tslint": "~5.20.1",
     "tslint-config-prettier": "^1.15.0",
     "tslint-microsoft-contrib": "^5.2.1",
     "tslint-no-unused-expression-chai": "^0.1.4",
